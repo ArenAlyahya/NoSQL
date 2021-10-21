@@ -21,8 +21,6 @@ def create_bucket():
 	# , CreateBucketConfiguration = {'LocationConstraint':'us-east-1'}
 
 
-
-
 def create_DataTable(dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource('dynamodb', region_name ='us-east-1')
@@ -88,7 +86,7 @@ def read_csv_file():
             md = s3.Object('aren-alyahya-bucket',item[4]).Acl().put(ACL = 'public-read')
             url = urlbase + item[4]
             metedata_item = {'Id' : item[0], 'Temp' : item[1], 
-            'Conductivity': item [4],'Concentration': item[2], 'url':url}
+            'Conductivity': item [2],'Concentration': item[3], 'url':url}
 
             table.put_item(Item = metedata_item)
 
