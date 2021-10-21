@@ -14,8 +14,8 @@ from boto3.dynamodb.conditions import Key, Attr
 
 def create_bucket():
 	s3 = boto3.resource('s3',
-	aws_access_key_id = 'AKIAZXEWTCLXZK5AEJUY',
-	aws_secret_access_key ='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')
+	aws_access_key_id = '',
+	aws_secret_access_key ='')
 	s3.create_bucket(Bucket = 'aren-alyahya-bucket')
 	#s3.Object('aren-alyahya-bucket','experiments.csv').put( Body = open('experiments.csv','rb'))
 	# , CreateBucketConfiguration = {'LocationConstraint':'us-east-1'}
